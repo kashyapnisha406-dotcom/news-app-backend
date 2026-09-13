@@ -6,9 +6,13 @@ const newsRouter = require('./routes/news-routes');
 
 const app = express();
 
-// Middleware
+// Middleware with updated CORS for Vercel production frontend
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: [
+    'https://news-app-frontend-tau.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ],
   credentials: true
 }));
 app.use(express.json());
